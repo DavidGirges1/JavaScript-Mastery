@@ -676,15 +676,432 @@ line comment */
 
 // setTimeout(() => console.log("hello"), 3000);
 
-const numbers = [1, 2, 3, 4, 5, 6];
+// const numbers = [1, 2, 3, 4, 5, 6];
 
-const square = numbers.map((element) => Math.pow(element, 2));
-console.log(square);
-const cube = numbers.map((element) => Math.pow(element, 3));
-console.log(cube);
-const even = numbers.filter((element) => element % 2 === 0);
-console.log(even);
-const odd = numbers.filter((element) => element % 2 !== 0);
-console.log(odd);
-const total = numbers.reduce((prev, next) => prev + next);
-console.log(total);
+// const square = numbers.map((element) => Math.pow(element, 2));
+// console.log(square);
+// const cube = numbers.map((element) => Math.pow(element, 3));
+// console.log(cube);
+// const even = numbers.filter((element) => element % 2 === 0);
+// console.log(even);
+// const odd = numbers.filter((element) => element % 2 !== 0);
+// console.log(odd);
+// const total = numbers.reduce((prev, next) => prev + next);
+// console.log(total);
+
+// objects in js
+
+// const person = {
+//   firstName: "david",
+//   lastName: "g.",
+//   age: 18,
+//   isStudent: true,
+//   sayHello: function () {
+//     console.log("hello I am david");
+//   },
+// };
+
+// console.log(person.firstName);
+// console.log(person.lastName);
+// console.log(person.age);
+
+// const person2 = {
+//   firstName: "ahmed",
+//   lastName: "khalid",
+//   sayHello: () => console.log("hi i am ahmed"),
+// };
+// console.log(person2.firstName);
+// console.log(person2.lastName);
+
+// person.sayHello();
+// person2.sayHello();
+
+// this
+// const person1 = {
+//   name: "david",
+//   age: 19,
+//   sayHello: function () {
+//     console.log(`hello I am ${this.named}`);
+//   },
+//   showAge: function () {
+//     console.log(`my age is ${this.age}`);
+//   },
+// };
+// person1.sayHello();
+// person1.showAge();
+
+// this keyword doesn't work with arrow functions
+
+// constructors
+
+// function Car(make, model, year, color) {
+//   this.model = model;
+//   this.make = make;
+//   this.year = year;
+//   this.color = color;
+//   this.drive = function () {
+//     console.log(`this car model is ${this.model}`);
+//   };
+// }
+
+// const car1 = new Car("ford", "Mustang", 2024, "red");
+// const car2 = new Car("Che", "Mustang", 2026, "red");
+// const car3 = new Car("Ness", "Mustang", 1999, "red");
+
+// console.log(car1.color);
+// console.log(car1.make);
+
+// car2.drive();
+
+// classes
+// class Product {
+//   constructor(name, price) {
+//     this.name = name;
+//     this.price = price;
+//   }
+
+//   displayProduct() {
+//     console.log(`product is ${this.name}`);
+//     console.log(`product is ${this.price}`);
+//   }
+
+//   calcTotal(tax) {
+//     return this.price + this.price * tax;
+//   }
+// }
+
+// const tax = 0.05;
+
+// const product1 = new Product("spoon", 10);
+// product1.displayProduct();
+// const product2 = new Product("pants", 20);
+
+// priceTaxed = product2.calcTotal(tax);
+// console.log(priceTaxed);
+
+// class MathUtil {
+//   static PI = 3.14;
+
+//   static getDiameter(radius) {
+//     return radius * 2;
+//   }
+
+//   static getArea(radius) {
+//     return this.PI * radius * radius;
+//   }
+// }
+
+// console.log(MathUtil.PI);
+// console.log(MathUtil.getDiameter(2));
+// console.log(MathUtil.getArea(2));
+
+// class User {
+//   static userCount = 0;
+
+//   constructor(username) {
+//     this.username = username;
+//     User.userCount++;
+//   }
+// }
+
+// user1 = new User("david");
+// user2 = new User("david");
+// user3 = new User("david");
+
+// console.log(User.userCount);
+
+// inheritance
+
+// class Animal {
+//   alive = true;
+
+//   eat() {
+//     console.log(`this ${this.name} is eating`);
+//   }
+// }
+
+// class Fish extends Animal {
+//   name = "dodo";
+// }
+// class Rabbit extends Animal {
+//   name = "rabbit";
+// }
+
+// fish1 = new Fish();
+// fish1.eat();
+
+// super keyword
+// class Animal {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   speedDisplay(speed) {
+//     return `the speed is ${speed}`;
+//   }
+// }
+
+// class Rabbit extends Animal {
+//   constructor(name, age, runSpeed) {
+//     super(name, age);
+//     this.runSpeed = runSpeed;
+//   }
+
+//   run() {
+//     return super.speedDisplay(this.runSpeed);
+//   }
+// }
+// class Fish extends Animal {
+//   constructor(name, age, swimSpeed) {
+//     super(name, age);
+//     this.swimSpeed = swimSpeed;
+//   }
+
+//   swim() {
+//     return super.speedDisplay(this.swimSpeed);
+//   }
+// }
+// class Hawk extends Animal {
+//   constructor(name, age, flySpeed) {
+//     super(name, age);
+//     this.flySpeed = flySpeed;
+//   }
+
+//   fly() {
+//     return super.speedDisplay(this.flySpeed);
+//   }
+// }
+
+// const rabbit = new Rabbit("rabbit", 1, 20);
+// const fish = new Fish("fish", 3, 40);
+// const hawk = new Hawk("hawk", 4, 30);
+
+// console.log(rabbit.name);
+// console.log(fish.age);
+// console.log(hawk.flySpeed);
+
+// message = fish.swim();
+// console.log(message);
+
+// class Rectangle {
+//   constructor(width, height) {
+//     this.width = width;
+//     this.height = height;
+//   }
+
+//   set width(newWidth) {
+//     if (newWidth > 0) {
+//       this._width = newWidth;
+//     } else {
+//       console.error("width must be a positive number");
+//     }
+//   }
+
+//   set height(newHeight) {
+//     if (newHeight > 0) {
+//       this._height = newHeight;
+//     } else {
+//       console.error("height must be a positive number");
+//     }
+//   }
+
+//   get width() {
+//     return this._width.toFixed(1) + "cm";
+//   }
+
+//   get height() {
+//     return this._height.toFixed(1) + "cm";
+//   }
+
+//   get area() {
+//     return (this._width * this._height).toFixed(1) + "cm";
+//   }
+// }
+
+// const rectangle = new Rectangle(10, 3);
+
+// console.log(rectangle.width);
+// console.log(rectangle.height);
+// console.log(rectangle.area);
+
+// getters and setters in js
+// class Person {
+//   constructor(firstName, lastName, age) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//   }
+
+//   set firstName(name) {
+//     if (typeof name === "string" && name.length > 3) {
+//       this._firstName = name;
+//     } else {
+//       console.error("please enter a valid name");
+//     }
+//   }
+
+//   set lastName(name) {
+//     if (typeof name === "string" && name.length > 3) {
+//       this._lastName = name;
+//     } else {
+//       console.error("please enter a valid name");
+//     }
+//   }
+
+//   set age(age) {
+//     if (typeof age === "number" && age >= 0) {
+//       this._age = age;
+//     } else {
+//       console.log("please enter a valid age");
+//     }
+//   }
+
+//   get firstName() {
+//     return this._firstName;
+//   }
+
+//   get lastName() {
+//     return this._lastName;
+//   }
+
+//   get age() {
+//     return this._age;
+//   }
+
+//   get fullName() {
+//     return `${this._firstName} ${this.lastName}`;
+//   }
+// }
+
+// const person = new Person("david", "elks", 12);
+
+// console.log(person.firstName);
+// console.log(person.lastName);
+// console.log(person.age);
+// console.log(person.fullName);
+
+// destructuring
+
+// swap the values of two variables [] for array {} for object
+// let a = 1;
+// let b = 3;
+// [a, b] = [b, a];
+// console.log(a);
+// console.log(b);
+
+// // swap two elements in an array
+// const colors = ["red", "green", "blue", "black", "white"];
+// [colors[0], colors[2]] = [colors[2], colors[0]];
+
+// console.log(colors);
+
+// // assign array elements to variables
+// const [firstColor, secondColor, thirdColor, ...extraColors] = colors;
+
+// console.log(firstColor);
+// console.log(secondColor);
+// console.log(...extraColors);
+
+// extract values from objects
+
+// const person1 = {
+//   firstName: "david",
+//   lastName: "elks",
+//   age: 13,
+//   job: "student",
+// };
+// const person2 = {
+//   firstName: "ahmed",
+//   lastName: "khalid",
+//   age: 20,
+// };
+
+// const { firstName, lastName, age, job = "student" } = person2;
+
+// // console.log(firstName);
+// // console.log(lastName);
+// // console.log(job);
+
+// function displayPerson({ firstName, lastName, age, job = "unemployed" }) {
+//   console.log(firstName);
+//   console.log(lastName);
+//   console.log(age);
+//   console.log(job);
+// }
+
+// displayPerson(person1);
+
+// nested objects
+
+// const person = {
+//   name: "david",
+//   age: 19,
+//   hobbies: ["coding", "python", "js"],
+
+//   address: {
+//     country: "egypt",
+//     street: "hhhh",
+//   },
+// };
+
+// console.log(person.name);
+// console.log(person.hobbies[0]);
+// console.log(person.address.country);
+
+// for (const property in person.address) {
+//   console.log(person.address[property]);
+// }
+
+// class Address {
+//   constructor(street, city, country) {
+//     this.city = city;
+//     this.street = street;
+//     this.country = country;
+//   }
+// }
+
+// class Person {
+//   constructor(name, age, ...address) {
+//     this.name = name;
+//     this.age = age;
+//     this.address = new Address(...address);
+//   }
+// }
+
+// const person1 = new Person("david", 12, "ht", "fm", "eg");
+
+// console.log(person1.address);
+
+// const fruits = [
+//   { name: "apple", price: 12 },
+//   { name: "kiwi", price: 14 },
+//   { name: "orange", price: 10 },
+// ];
+
+// console.log(fruits[0].name);
+// console.log(fruits[1].price);
+// fruits.push({ name: "papaya", price: 99 });
+// console.log(fruits[3].price);
+
+// fruits.forEach((fruit) => console.log(fruit.name));
+
+// const names = fruits.map((fruit) => fruit.name);
+// const prices = fruits.map((fruit) => fruit.price);
+// console.log(names);
+// console.log(prices);
+
+// const expensive = fruits.filter((fruit) => fruit.price >= 50);
+// console.log(expensive);
+
+// const maxPrice = fruits.reduce((max, fruit) =>
+//   fruit.price > max.price ? fruit : max,
+// );
+
+// const minPrice = fruits.reduce((min, fruit) =>
+//   fruit.price < min.price ? fruit : min,
+// );
+// console.log(maxPrice);
+// console.log(minPrice);
+
+// sort method in js
