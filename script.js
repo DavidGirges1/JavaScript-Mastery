@@ -1105,3 +1105,245 @@ line comment */
 // console.log(minPrice);
 
 // sort method in js
+// let numbers = [1, 2, 5, 6, 12, 10, 123];
+
+// numbers.sort((a, b) => a - b); // asc
+// numbers.sort((a, b) => b - a); // desc
+
+// const people = [
+//   { name: "david", age: 10, grade: "A" },
+//   { name: "ahmed", age: 12, grade: "C" },
+//   { name: "khalid", age: 19, grade: "B" },
+// ];
+
+// people.sort((a, b) => a.age - b.age);
+// console.log(people);
+
+// people.sort((a, b) => a.name.localeCompare(b.name));
+// console.log(people);
+
+// people.sort((a, b) => a.grade.localeCompare(b.grade));
+// console.log(people);
+
+// const cards = ["a", "b", "c ", 12, 123, 3123, 3123];
+
+// function shuffle(cards) {
+//   for (let i = cards.length - 1; i > 0; i--) {
+//     let random = Math.floor(Math.random() * (i + 1));
+//     [cards[i], cards[random]] = [cards[random], cards[i]];
+//   }
+// }
+
+// shuffle(cards);
+// console.log(cards);
+
+// date object
+// Date(year, month, day, hour, minute, second, ms)
+// const date = new Date();
+
+// console.log(date);
+
+// const year = date.getFullYear();
+// console.log(year);
+
+// const month = date.getMonth();
+// console.log(month);
+
+// const day = date.getDay();
+// console.log(day);
+
+// // getMinutes() getSeconds()
+
+// const dayOfWeek = date.getDay();
+// console.log(dayOfWeek);
+
+// date.setFullYear(2021);
+// console.log(date);
+
+// closure  function inside another function
+// all variable inside are private
+// function outer() {
+//   let message = "hello";
+//   function inner() {
+//     console.log(message);
+//   }
+
+//   inner();
+// }
+
+// outer();
+
+// function createCounter() {
+//   let count = 0;
+
+//   function increment() {
+//     count++;
+//     console.log(`count increased to ${count}`);
+//   }
+
+//   function getCount() {
+//     return count;
+//   }
+
+//   return { increment, getCount };
+// }
+
+// const counter = createCounter();
+
+// counter.increment();
+// counter.increment();
+// counter.increment();
+
+// console.log(`counter is ${counter.getCount()}`);
+
+// function createScore() {
+//   let score = 0;
+//   function increaseScore(points) {
+//     score += points;
+//     console.log(`+${points}`);
+//   }
+
+//   function decreaseScore(points) {
+//     score -= points;
+//     console.log(`-${points}`);
+//   }
+
+//   function getScore() {
+//     console.log("score is " + score);
+//   }
+
+//   return { increaseScore, decreaseScore, getScore };
+// }
+
+// const game = createScore();
+// game.increaseScore(20);
+// game.decreaseScore(10);
+// game.getScore();
+
+// // setTimeOUt
+
+// function sayHello() {
+//   window.alert("hello");
+// }
+
+// setTimeout(sayHello, 1000);
+
+// setTimeout(() => {
+//   window.alert("i am david");
+// }, 3000);
+
+// const timeId = setTimeout(() => {
+//   window.alert("hello");
+// }, 2000);
+
+// clearTimeout(timeId);
+
+// const button = document.getElementById("clickMe");
+// let timeId;
+// function startTimeout() {
+//   timeId = setTimeout(() => {
+//     alert("hello");
+//   }, 3000);
+// }
+
+// function stop() {
+//   clearTimeout(timeId);
+// }
+
+// import { PI, getArea } from "./mathUtil.js";
+// console.log(PI);
+// console.log(getArea(12).toFixed);
+
+// synch one by one
+// async multiple operations done at the same time
+// callback  asynv await promises
+// function func2() {
+//   console.log("hello 2");
+//   console.log("hello 3");
+// }
+
+// function func1(callback) {
+//   setTimeout(() => {
+//     console.log("hello1");
+//     callback();
+//   }, 3000);
+// }
+
+// func1(func2);
+
+// error object
+// try
+// catch
+// finally
+
+// try {
+//   console.log(x);
+// } catch (error) {
+//   console.error(error);
+// } finally {
+//   // close files connections or resources
+//   console.log("this always executes");
+// }
+// console.log("we have reached the end");
+
+// try {
+//   const div = Number(window.prompt("enter a div"));
+//   const divisor = Number(window.prompt("enter the divisor"));
+
+//   if (divisor == 0) {
+//     throw new Error("you can't divide by zero");
+//   }
+
+//   if (isNaN(div) || isNaN(divisor)) {
+//     throw new Error("enter a valid number");
+//   }
+//   const result = div / divisor;
+//   console.log(result);
+// } catch (error) {
+//   console.error(error);
+// } finally {
+//   console.log("you have reached the end");
+// }
+
+// DOM
+
+// elements selectors
+// id
+const myHeading = document.getElementById("myHeading");
+myHeading.style.color = "red";
+myHeading.style.textAlign = "center";
+
+// className
+
+// const fruits = document.getElementsByClassName("fruit");
+// fruits[0].style.color = "blue";
+
+// for (let fruit of fruits) {
+//   fruit.style.backgroundColor = "gray";
+// }
+
+// Array.from(fruits).forEach((fruit) => {
+//   fruit.style.backgroundColor = "cyan";
+// });
+
+// tagname
+const liElements = document.getElementsByTagName("li");
+console.log(liElements);
+
+liElements[0].style.backgroundColor = "yellow";
+
+for (let element of liElements) {
+  element.style.backgroundColor = "gray";
+}
+
+Array.from(liElements).forEach((liElement) => {
+  liElement.style.backgroundColor = "yellow";
+});
+
+// query selector
+const element = document.querySelector(".fruit");
+element.style.backgroundColor = "red";
+
+const foods = document.querySelectorAll(".fruit");
+
+foods[2].style.backgroundColor = "gray";

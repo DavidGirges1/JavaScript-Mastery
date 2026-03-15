@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      body {
+        background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zMDktYWV3LTAxM18xXzEuanBn.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <body class="bg-black">
+      <!-- FIXED: added bg-black so the white clock and glow can be seen -->
+
+      <div
+        id="clock-container"
+        class="flex justify-center items-center h-screen"
+      >
+        <div id="clock" class="text-white text-7xl font-semibold text-center">
+          00:00:00
+        </div>
+      </div>
+
+      <script src="clock.js"></script>
+    </body>
+  </body>
+</html>
