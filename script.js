@@ -1309,9 +1309,9 @@ line comment */
 
 // elements selectors
 // id
-const myHeading = document.getElementById("myHeading");
-myHeading.style.color = "red";
-myHeading.style.textAlign = "center";
+// const myHeading = document.getElementById("myHeading");
+// myHeading.style.color = "red";
+// myHeading.style.textAlign = "center";
 
 // className
 
@@ -1327,23 +1327,90 @@ myHeading.style.textAlign = "center";
 // });
 
 // tagname
-const liElements = document.getElementsByTagName("li");
-console.log(liElements);
+// const liElements = document.getElementsByTagName("li");
+// console.log(liElements);
 
-liElements[0].style.backgroundColor = "yellow";
+// liElements[0].style.backgroundColor = "yellow";
 
-for (let element of liElements) {
-  element.style.backgroundColor = "gray";
-}
+// for (let element of liElements) {
+//   element.style.backgroundColor = "gray";
+// }
 
-Array.from(liElements).forEach((liElement) => {
-  liElement.style.backgroundColor = "yellow";
-});
+// Array.from(liElements).forEach((liElement) => {
+//   liElement.style.backgroundColor = "yellow";
+// });
 
-// query selector
-const element = document.querySelector(".fruit");
-element.style.backgroundColor = "red";
+// // query selector
+// const element = document.querySelector(".fruit");
+// element.style.backgroundColor = "red";
 
-const foods = document.querySelectorAll(".fruit");
+// const foods = document.querySelectorAll(".fruit");
 
-foods[2].style.backgroundColor = "gray";
+// foods[2].style.backgroundColor = "gray";
+
+// DOM navigation
+// ,firstElementChild
+// .lastElementChild
+// .nextElementSibling
+// .previousElementSibling
+// .parentElement
+// .children
+
+// const element = document.getElementById("fruits");
+// const firstChild = element.firstElementChild;
+// firstChild.style.backgroundColor = "yellow";
+// const lastChild = element.lastElementChild;
+// lastChild.style.backgroundColor = "gray";
+
+// const ulElements = document.querySelectorAll("ul");
+
+// ulElements.forEach((element) => {
+//   const first = element.firstElementChild;
+//   first.style.backgroundColor = "yellow";
+// });
+
+// const element = document.getElementById("fruits");
+// const last = element.lastElementChild;
+
+// last.style.color = "red";
+
+// const ulElements = document.querySelectorAll("ul");
+
+// ulElements.forEach((element) => {
+//   let last = element.lastElementChild;
+//   last.style.color = "red";
+// });
+
+// const element = document.getElementById("a");
+// element.nextElementSibling.style.color = "blue";
+
+// element.parentElement.style.backgroundColor = "gray";
+
+// const parent = document.getElementById("fruits");
+// // children returns a collection
+// const children = parent.children;
+
+// Array.from(children).forEach((element) => {
+//   element.style.color = "red";
+// });
+
+// children[1].style.backgroundColor = "gray";
+
+// creating an element in html
+// 1. create the element
+
+const newH1 = document.createElement("h1");
+
+// 2. add attributes or properties
+newH1.textContent = "I am a new H1";
+newH1.id = "h1";
+newH1.style.color = "red";
+newH1.style.textAlign = "center";
+// 3. append element to dom
+// document.getElementById("box3").append(newH1);
+
+const box2 = document.getElementById("box2");
+document.body.insertBefore(newH1, box2);
+// 4. remove html element
+
+document.body.removeChild(newH1);
