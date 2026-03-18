@@ -1457,15 +1457,71 @@ line comment */
 //   }
 // });
 
-const image = document.getElementById("img");
-const button = document.getElementById("btn");
+// const image = document.getElementById("img");
+// const button = document.getElementById("btn");
 
-button.addEventListener("click", () => {
-  image.classList.toggle("invisible");
+// button.addEventListener("click", () => {
+//   image.classList.toggle("invisible");  // turns on and off
 
-  if (image.classList.contains("invisible")) {
-    button.textContent = "Show";
-  } else {
-    button.textContent = "Hide";
-  }
+//   if (image.classList.contains("invisible")) {
+//     button.textContent = "Show";
+//   } else {
+//     button.textContent = "Hide";
+//   }
+// });
+
+// NodeList
+
+// let buttons = document.querySelectorAll(".btn");
+
+// buttons.forEach((button) => {
+//   button.classList.add("bg-green-500", "px-5", "py-2", "mt-2");
+//   button.textContent += "😊";
+// });
+
+// buttons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     event.target.classList.toggle("bg-green-300");
+//   });
+// });
+
+// buttons.forEach((button) => {
+//   button.addEventListener("mouseover", (button) => {
+//     event.target.classList.toggle("bg-red-500");
+//   });
+// });
+
+// const button = document.createElement("button");
+// button.textContent = "button 5";
+// button.classList = "btn";
+// document.body.appendChild(button);
+
+// console.log(buttons);
+
+// // node list is a static collection they wont't update automatically to add the changes of the DOM
+
+// buttons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     event.target.remove();
+//   });
+// });
+
+// classList
+// add()
+// remove()
+// toggle()
+// replace
+//  contains
+
+button = document.getElementById("btn");
+
+button.classList.add("rounded-full");
+button.classList.remove("rounded-full");
+
+button.addEventListener("mousedown", (event) => {
+  event.target.classList.add("bg-red-500");
+});
+
+button.addEventListener("mouseup", (event) => {
+  event.target.classList.replace("bg-red-500", "bg-green-500");
 });
