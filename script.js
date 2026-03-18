@@ -1399,18 +1399,73 @@ line comment */
 // creating an element in html
 // 1. create the element
 
-const newH1 = document.createElement("h1");
+// const newH1 = document.createElement("h1");
 
-// 2. add attributes or properties
-newH1.textContent = "I am a new H1";
-newH1.id = "h1";
-newH1.style.color = "red";
-newH1.style.textAlign = "center";
-// 3. append element to dom
-// document.getElementById("box3").append(newH1);
+// // 2. add attributes or properties
+// newH1.textContent = "I am a new H1";
+// newH1.id = "h1";
+// newH1.style.color = "red";
+// newH1.style.textAlign = "center";
+// // 3. append element to dom
+// // document.getElementById("box3").append(newH1);
 
-const box2 = document.getElementById("box2");
-document.body.insertBefore(newH1, box2);
-// 4. remove html element
+// const box2 = document.getElementById("box2");
+// document.body.insertBefore(newH1, box2);
+// // 4. remove html element
 
-document.body.removeChild(newH1);
+// document.body.removeChild(newH1);
+
+// Event Listeners
+
+// emojiContainer = document.getElementById("emoji-container");
+
+// const movement = 60;
+// let x = 0;
+// let y = 0;
+
+// document.addEventListener("keydown", (event) => {
+//   emojiContainer.textContent = "😡";
+//   emojiContainer.classList.remove("bg-blue-300");
+//   emojiContainer.classList.add("bg-red-300");
+// });
+
+// document.addEventListener("keyup", (event) => {
+//   emojiContainer.textContent = "😊";
+//   emojiContainer.classList.remove("bg-red-300");
+//   emojiContainer.classList.add("bg-blue-300");
+// });
+
+// document.addEventListener("keydown", (event) => {
+//   if (event.key.startsWith("Arrow")) {
+//     switch (event.key) {
+//       case "ArrowUp":
+//         y -= 10;
+//         break;
+//       case "ArrowDown":
+//         y += 10;
+//         break;
+//       case "ArrowRight":
+//         x += 10;
+//         break;
+//       case "ArrowLeft":
+//         x -= 10;
+//         break;
+//     }
+
+//     emojiContainer.style.top = `${y}px`;
+//     emojiContainer.style.left = `${x}px`;
+//   }
+// });
+
+const image = document.getElementById("img");
+const button = document.getElementById("btn");
+
+button.addEventListener("click", () => {
+  image.classList.toggle("invisible");
+
+  if (image.classList.contains("invisible")) {
+    button.textContent = "Show";
+  } else {
+    button.textContent = "Hide";
+  }
+});
